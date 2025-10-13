@@ -1,0 +1,30 @@
+// AuraTune Configuration Template
+// Copy this file to config.dart and replace the placeholder values
+
+class AppwriteConfig {
+  // Appwrite Cloud endpoint (usually doesn't change)
+  static const String endpoint = 'https://cloud.appwrite.io/v1';
+  
+  // Your Appwrite Project ID (found in your project settings)
+  static const String projectId = 'YOUR_PROJECT_ID';
+  
+  // Your Appwrite Function ID for the analyze-aura function
+  static const String analyzeFunctionId = 'analyze-aura';
+  
+  // Your Appwrite Database ID (found in your database settings)
+  static const String databaseId = 'YOUR_DATABASE_ID';
+  
+  // Your Appwrite Collection ID (found in your collection settings)
+  static const String collectionId = 'YOUR_COLLECTION_ID';
+  
+  // Redirect URLs for OAuth (update these for production)
+  static const String successUrl = 'https://auratune.shivamyadav.com.np';
+  static const String failureUrl = 'https://auratune.shivamyadav.com.np';
+}
+
+// Instructions:
+// 1. Copy this file to config.dart: cp lib/config.dart.template lib/config.dart
+// 2. Copy your Project ID from Appwrite Console -> Project Settings
+// 3. Copy your Database ID from Appwrite Console -> Database -> Your Database
+// 4. Copy your Collection ID from Appwrite Console -> Database -> Your Database -> Your Collection
+// 5. Update the redirect URLs when deploying to production
