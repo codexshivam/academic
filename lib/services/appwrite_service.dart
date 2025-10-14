@@ -87,17 +87,26 @@ class AppwriteService {
         'profileImageUrl': profileImageUrl,
       });
 
-      final result = await _functions.createExecution(
-        functionId: AppwriteConfig.analyzeFunctionId,
-        body: payload,
-      );
+        final result = await _functions.createExecution(
+          functionId: AppwriteConfig.analyzeFunctionId,
+          body: payload,
+        );
 
-      if (result.status == 'completed') {
-        final responseData = json.decode(result.responseBody);
-        return AuraData.fromJson(responseData);
-      } else {
-        throw AppwriteException('Function execution failed: ${result.responseBody}');
-      }
+        if (result.status == 'completed') {
+          final responseData = json.decode(result.responseBody);
+          
+          // Handle new response format with success flag
+          if (responseData['success'] == true && responseData['data'] != null) {
+            return AuraData.fromJson(responseData['data']);
+          } else if (responseData['spotifyId'] != null) {
+            // Handle legacy response format
+            return AuraData.fromJson(responseData);
+          } else {
+            throw AppwriteException('Invalid response format from function');
+          }
+        } else {
+          throw AppwriteException('Function execution failed: ${result.responseBody}');
+        }
     } catch (e) {
       throw AppwriteException('Failed to create user profile: $e');
     }
@@ -121,17 +130,26 @@ class AppwriteService {
         'updateExisting': true,
       });
 
-      final result = await _functions.createExecution(
-        functionId: AppwriteConfig.analyzeFunctionId,
-        body: payload,
-      );
+        final result = await _functions.createExecution(
+          functionId: AppwriteConfig.analyzeFunctionId,
+          body: payload,
+        );
 
-      if (result.status == 'completed') {
-        final responseData = json.decode(result.responseBody);
-        return AuraData.fromJson(responseData);
-      } else {
-        throw AppwriteException('Function execution failed: ${result.responseBody}');
-      }
+        if (result.status == 'completed') {
+          final responseData = json.decode(result.responseBody);
+          
+          // Handle new response format with success flag
+          if (responseData['success'] == true && responseData['data'] != null) {
+            return AuraData.fromJson(responseData['data']);
+          } else if (responseData['spotifyId'] != null) {
+            // Handle legacy response format
+            return AuraData.fromJson(responseData);
+          } else {
+            throw AppwriteException('Invalid response format from function');
+          }
+        } else {
+          throw AppwriteException('Function execution failed: ${result.responseBody}');
+        }
     } catch (e) {
       throw AppwriteException('Failed to update user profile: $e');
     }
@@ -153,17 +171,26 @@ class AppwriteService {
         'displayName': displayName,
       });
 
-      final result = await _functions.createExecution(
-        functionId: AppwriteConfig.analyzeFunctionId,
-        body: payload,
-      );
+        final result = await _functions.createExecution(
+          functionId: AppwriteConfig.analyzeFunctionId,
+          body: payload,
+        );
 
-      if (result.status == 'completed') {
-        final responseData = json.decode(result.responseBody);
-        return AuraData.fromJson(responseData);
-      } else {
-        throw AppwriteException('Function execution failed: ${result.responseBody}');
-      }
+        if (result.status == 'completed') {
+          final responseData = json.decode(result.responseBody);
+          
+          // Handle new response format with success flag
+          if (responseData['success'] == true && responseData['data'] != null) {
+            return AuraData.fromJson(responseData['data']);
+          } else if (responseData['spotifyId'] != null) {
+            // Handle legacy response format
+            return AuraData.fromJson(responseData);
+          } else {
+            throw AppwriteException('Invalid response format from function');
+          }
+        } else {
+          throw AppwriteException('Function execution failed: ${result.responseBody}');
+        }
     } catch (e) {
       throw AppwriteException('Failed to analyze aura: $e');
     }
