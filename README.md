@@ -175,12 +175,6 @@ For complete setup instructions, check out the **[Implementation Guide](IMPLEMEN
 - **Institution**: Chandigarh University
 - **Project Type**: Academic Capstone Project
 
-### 👨‍🏫 **Academic Supervisor**
-**Professor Vikas Mittal**  
-*Professor, Computer Science and Engineering*  
-*Chandigarh University*
-
-Special thanks to Prof. Vikas Mittal for his guidance and mentorship throughout this project. His expertise in data science and machine learning has been invaluable in understanding the practical applications of NumPy and Pandas.
 
 ### 📚 **Learning Objectives**
 This project demonstrates:
@@ -317,12 +311,6 @@ This project is developed for academic purposes as part of the BE CSE curriculum
 
 ## 🙏 Acknowledgments
 
-### 👨‍🏫 **Academic Supervisor**
-**Professor Vikas Mittal**  
-*Professor, Computer Science and Engineering*  
-*Chandigarh University*
-
-Thank you for your guidance, mentorship, and expertise in data science and machine learning. Your insights into NumPy and Pandas applications have been invaluable.
 
 ### 🏫 **Institution**
 **Chandigarh University**  
@@ -363,13 +351,9 @@ Grateful to Chandigarh University for providing the academic environment and res
 ### 💬 **Get in Touch**
 - **Project Demo**: [https://auratune.shivamyadav.com.np](https://auratune.shivamyadav.com.np)
 - **GitHub**: [@codexshivam](https://github.com/codexshivam)
-- **Email**: [Your Email]
+- **Email**: [people@shivamyadav.com.np](mailto:people@shivamyadav.com.np)
 - **University**: Chandigarh University, CSE Department
 
-### 🎓 **Academic Supervisor**
-**Professor Vikas Mittal**  
-*Professor, CSE Department*  
-*Chandigarh University*
 
 ---
 
@@ -379,7 +363,6 @@ Grateful to Chandigarh University for providing the academic environment and res
 
 *1st Semester CSE Student at Chandigarh University*
 
-*Under the guidance of Professor Vikas Mittal*
 
 [![Chandigarh University](https://img.shields.io/badge/Chandigarh-University-blue?style=for-the-badge&logo=graduation-cap&logoColor=white)](https://www.cuchd.in)
 [![BE CSE](https://img.shields.io/badge/BE-CSE-green?style=for-the-badge&logo=code&logoColor=white)](https://www.cuchd.in)
