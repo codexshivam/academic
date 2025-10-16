@@ -361,7 +361,7 @@ Grateful to Chandigarh University for providing the academic environment and res
 
 **🎵 Made with ❤️ and 📚 by Shivam Yadav**
 
-*1st Semester CSE Student at Chandigarh University*
+*1st Year CSE Student at Chandigarh University*
 
 
 [![Chandigarh University](https://img.shields.io/badge/Chandigarh-University-blue?style=for-the-badge&logo=graduation-cap&logoColor=white)](https://www.cuchd.in)
