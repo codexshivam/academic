@@ -18,10 +18,10 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       padding: ResponsiveHelper.getResponsiveEdgeInsets(context),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+        color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
         ),
       ),
       child: ResponsiveLayout(
@@ -135,7 +135,7 @@ class CustomAppBar extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            color: Colors.white.withOpacity(0.8),
+            color: Colors.white.withValues(alpha: 0.8),
             fontSize: ResponsiveHelper.getResponsiveFontSize(context, 16),
           ),
         ),
@@ -182,7 +182,7 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         shape: BoxShape.circle,
       ),
       child: Icon(icon, color: Colors.white, size: 22),

@@ -116,7 +116,7 @@ class LoginScreen extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
                 blurRadius: 20,
                 spreadRadius: 5,
               ),
@@ -158,7 +158,7 @@ class LoginScreen extends StatelessWidget {
           'Connect with Spotify and unlock insights into your musical personality through AI-powered analysis.',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(context, 18),
-            color: Colors.white.withOpacity(0.8),
+            color: Colors.white.withValues(alpha: 0.8),
             height: 1.5,
           ),
           textAlign: TextAlign.center,
@@ -197,7 +197,7 @@ class LoginScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           elevation: 8,
-          shadowColor: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+          shadowColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
         ),
       ),
     );
@@ -252,7 +252,7 @@ class LoginScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+              color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(
@@ -279,7 +279,7 @@ class LoginScreen extends StatelessWidget {
                   feature.description,
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, 14),
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                   ),
                 ),
               ],

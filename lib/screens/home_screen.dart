@@ -97,10 +97,10 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
         ),
       ),
       child: Column(
@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
           Text(
             'We\'re analyzing your Spotify listening history to create your unique musical aura. This may take a few moments...',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               height: 1.5,
             ),
             textAlign: TextAlign.center,
@@ -143,10 +143,10 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
         ),
       ),
       child: Column(
@@ -168,7 +168,7 @@ class HomeScreen extends StatelessWidget {
           Text(
             'Your musical aura analysis is being prepared. This will give you deep insights into your musical personality and preferences.',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               height: 1.5,
             ),
             textAlign: TextAlign.center,
@@ -267,7 +267,7 @@ class HomeScreen extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            color: Colors.white.withOpacity(0.7),
+            color: Colors.white.withValues(alpha: 0.7),
             fontSize: 12,
           ),
         ),
@@ -315,7 +315,7 @@ class HomeScreen extends StatelessWidget {
             Text(
               personality.description,
               style: TextStyle(
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white.withValues(alpha: 0.7),
                 height: 1.4,
               ),
             ),
@@ -348,7 +348,7 @@ class HomeScreen extends StatelessWidget {
             Text(
               'Share your musical personality with friends and discover their musical auras too!',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white.withValues(alpha: 0.7),
                 fontSize: 14,
               ),
               textAlign: TextAlign.center,
@@ -381,7 +381,7 @@ class HomeScreen extends StatelessWidget {
       child: Text(
         '© 2025 AuraTune. Discover your musical DNA.',
         style: TextStyle(
-          color: Colors.white.withOpacity(0.5),
+          color: Colors.white.withValues(alpha: 0.5),
           fontSize: 14,
         ),
       ),

@@ -53,7 +53,7 @@ class TechnologyCard extends StatelessWidget {
     return Text(
       'This application leverages several powerful technologies to analyze your music and generate your aura.',
       style: TextStyle(
-        color: Colors.white.withOpacity(0.7),
+        color: Colors.white.withValues(alpha: 0.7),
         height: 1.5,
         fontSize: ResponsiveHelper.getResponsiveFontSize(context, 16),
       ),
@@ -113,10 +113,10 @@ class TechnologyCard extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.05),
+            color: Colors.white.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: Colors.white.withOpacity(0.1),
+              color: Colors.white.withValues(alpha: 0.1),
             ),
           ),
           child: Column(
@@ -144,7 +144,7 @@ class TechnologyCard extends StatelessWidget {
               Text(
                 'Machine learning algorithms analyze audio features like energy, happiness, and danceability. These features are extracted from your listening data to create a personalized musical aura profile.',
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
+                  color: Colors.white.withValues(alpha: 0.7),
                   height: 1.5,
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, 14),
                 ),
@@ -235,7 +235,7 @@ class TechnologyCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+              color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -261,7 +261,7 @@ class TechnologyCard extends StatelessWidget {
                 Text(
                   description,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, 14),
                   ),
                 ),
@@ -282,10 +282,10 @@ class TechnologyCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
         ),
       ),
       child: Column(
@@ -300,7 +300,7 @@ class TechnologyCard extends StatelessWidget {
           Text(
             category,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, 12),
             ),
           ),

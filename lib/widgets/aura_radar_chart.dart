@@ -19,7 +19,7 @@ class AuraRadarChart extends StatelessWidget {
           RadarDataSet(
             dataEntries: values.map((v) => RadarEntry(value: v * 10)).toList(),
             borderColor: Theme.of(context).colorScheme.primary,
-            fillColor: Theme.of(context).colorScheme.primary.withOpacity(0.4),
+            fillColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.4),
             borderWidth: 2,
           ),
           ],
@@ -28,8 +28,8 @@ class AuraRadarChart extends StatelessWidget {
           radarBorderData: const BorderSide(color: Colors.transparent),
           tickCount: 5,
           ticksTextStyle: const TextStyle(color: Colors.transparent),
-          tickBorderData: BorderSide(color: Colors.white.withOpacity(0.2)),
-          gridBorderData: BorderSide(color: Colors.white.withOpacity(0.2)),
+          tickBorderData: BorderSide(color: Colors.white.withValues(alpha: 0.2)),
+          gridBorderData: BorderSide(color: Colors.white.withValues(alpha: 0.2)),
           getTitle: (index, angle) {
             return RadarChartTitle(
               text: titles[index],
@@ -93,14 +93,14 @@ class AuraTraitCard extends StatelessWidget {
             const SizedBox(height: 8),
             LinearProgressIndicator(
               value: value,
-              backgroundColor: Colors.white.withOpacity(0.1),
+              backgroundColor: Colors.white.withValues(alpha: 0.1),
               valueColor: AlwaysStoppedAnimation<Color>(color),
             ),
             const SizedBox(height: 8),
             Text(
               description,
               style: TextStyle(
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white.withValues(alpha: 0.7),
                 fontSize: 12,
               ),
             ),

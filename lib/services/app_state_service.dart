@@ -97,7 +97,7 @@ class AppStateService extends ChangeNotifier {
       
       if (profileExists) {
         // Returning user - update existing profile and refresh aura data
-        print('🎵 Returning user detected, updating profile...');
+        debugPrint('🎵 Returning user detected, updating profile...');
         final updatedAuraData = await _appwriteService.updateUserProfile(userId, displayName);
         
         _updateState(_state.copyWith(
@@ -107,7 +107,7 @@ class AppStateService extends ChangeNotifier {
         ));
       } else {
         // First-time user - create new profile
-        print('🎉 First-time user detected, creating profile...');
+        debugPrint('🎉 First-time user detected, creating profile...');
         final newAuraData = await _appwriteService.createUserProfile(userId, displayName, email, profileImageUrl);
         
         _updateState(_state.copyWith(

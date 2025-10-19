@@ -78,15 +78,15 @@ class MusicalAuraCard extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).colorScheme.primary.withOpacity(0.1),
-            Theme.of(context).colorScheme.primary.withOpacity(0.05),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -94,7 +94,7 @@ class MusicalAuraCard extends StatelessWidget {
           Text(
             'Overall Musical Score',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, 16),
             ),
           ),
@@ -112,7 +112,7 @@ class MusicalAuraCard extends StatelessWidget {
             'This radar chart visualizes your musical aura based on your listening history. Each axis represents a different musical attribute.',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               height: 1.5,
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, 14),
             ),
@@ -128,10 +128,10 @@ class MusicalAuraCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
         ),
       ),
       child: Column(
@@ -165,7 +165,7 @@ class MusicalAuraCard extends StatelessWidget {
           Text(
             personality.description,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
+              color: Colors.white.withValues(alpha: 0.8),
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, 16),
               height: 1.4,
             ),
