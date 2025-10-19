@@ -70,8 +70,8 @@ class WelcomeScreen extends StatelessWidget {
         shape: BoxShape.circle,
         gradient: RadialGradient(
           colors: [
-            Theme.of(context).colorScheme.primary.withOpacity(0.3),
-            Theme.of(context).colorScheme.primary.withOpacity(0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             Colors.transparent,
           ],
         ),
@@ -85,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
             color: Theme.of(context).colorScheme.primary,
             boxShadow: [
               BoxShadow(
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5),
                 blurRadius: 20,
                 spreadRadius: 5,
               ),
@@ -120,7 +120,7 @@ class WelcomeScreen extends StatelessWidget {
               : 'Hi $userName! Let\'s update your musical aura with your latest listening habits.',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontSize: isMobile ? 16 : 18,
-            color: Colors.white.withOpacity(0.8),
+            color: Colors.white.withValues(alpha: 0.8),
             height: 1.5,
           ),
           textAlign: TextAlign.center,
@@ -133,10 +133,10 @@ class WelcomeScreen extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(isMobile ? 20 : 30),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
         ),
       ),
       child: Column(
@@ -180,7 +180,7 @@ class WelcomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+              color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -205,7 +205,7 @@ class WelcomeScreen extends StatelessWidget {
                 Text(
                   description,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     fontSize: 14,
                   ),
                 ),
