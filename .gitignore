@@ -52,9 +52,6 @@ app.*.map.json
 .env.production
 .env.staging
 
-# Appwrite configuration (contains sensitive data)
-lib/config.dart
-
 # macOS
 .DS_Store
 .AppleDouble

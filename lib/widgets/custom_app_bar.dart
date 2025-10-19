@@ -153,8 +153,8 @@ class CustomAppBar extends StatelessWidget {
       itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
         PopupMenuItem<String>(
           value: 'user',
-          child: Text('Hi, $userName'),
           enabled: false,
+          child: Text('Hi, $userName'),
         ),
         const PopupMenuItem<String>(
           value: 'logout',
