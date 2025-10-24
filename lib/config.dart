@@ -18,8 +18,8 @@ class AppwriteConfig {
   static const String collectionId = 'profiles';
   
   // Redirect URLs for OAuth (update these for production)
-  static const String successUrl = 'https://fra.cloud.appwrite.io/v1/account/sessions/oauth2/callback/spotify/projects-from-shivam';
-  static const String failureUrl = 'https://fra.cloud.appwrite.io/v1/account/sessions/oauth2/callback/spotify/projects-from-shivam';
+  static const String successUrl = 'https://auratune.shivamyadav.com.np';
+  static const String failureUrl = 'https://auratune.shivamyadav.com.np';
 }
 
 // Instructions:
