@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
 import '../config.dart';
@@ -25,11 +26,44 @@ class AppwriteService {
     _databases = Databases(_client);
   }
 
+  /// Debug helper: prints the current Appwrite session details to console.
+  /// Useful to verify whether the session/cookie is present and contains
+  /// a provider access token after OAuth redirects.
+  Future<void> debugPrintSession() async {
+    try {
+      final session = await _account.getSession(sessionId: 'current');
+      // Print a couple of non-sensitive details to help debugging.
+      // Avoid printing full tokens in production logs.
+      // ignore: avoid_print
+      debugPrint('Appwrite session id: ${session.$id}');
+      // Print token length instead of token itself to reduce risk
+      // ignore: avoid_print
+      debugPrint('providerAccessToken length: ${session.providerAccessToken.length}');
+    } catch (e) {
+      try {
+        // ignore: avoid_print
+        debugPrint('debugPrintSession error: $e');
+      } catch (_) {}
+    }
+  }
+
   // Authentication methods
   Future<User?> getCurrentUser() async {
     try {
       return await _account.get();
     } catch (e) {
+      // Log the error to help debugging when the client cannot fetch the
+      // current user (commonly due to missing/blocked session cookie).
+      // Returning null preserves existing behavior but with better visibility.
+      // Use debugPrint to avoid bringing in a logging package.
+      // Re-throwing here would change runtime behavior; keep returning null
+      // so callers can handle unauthenticated state.
+      // Example: see DevTools Network -> check /v1/account request/response.
+      // Print the error and stacktrace if available.
+      try {
+        // ignore: avoid_print
+        debugPrint('getCurrentUser error: $e');
+      } catch (_) {}
       return null;
     }
   }
@@ -40,6 +74,7 @@ class AppwriteService {
         provider: 'spotify',
         success: AppwriteConfig.successUrl,
         failure: AppwriteConfig.failureUrl,
+        scopes: AppwriteConfig.spotifyScopes,
       );
     } catch (e) {
       throw AppwriteException('Failed to login with Spotify: $e');
@@ -64,6 +99,11 @@ class AppwriteService {
       );
       return response.documents.isNotEmpty;
     } catch (e) {
+      // Log database lookup errors to help diagnose why profile checks fail.
+      try {
+        // ignore: avoid_print
+        debugPrint('userProfileExists error: $e');
+      } catch (_) {}
       return false;
     }
   }
@@ -75,7 +115,7 @@ class AppwriteService {
       final accessToken = session.providerAccessToken;
 
       if (accessToken.isEmpty) {
-        throw AppwriteException('No access token available');
+        throw AppwriteException('No access token available (session missing or provider token empty)');
       }
 
       final payload = json.encode({
@@ -119,7 +159,7 @@ class AppwriteService {
       final accessToken = session.providerAccessToken;
 
       if (accessToken.isEmpty) {
-        throw AppwriteException('No access token available');
+        throw AppwriteException('No access token available (session missing or provider token empty)');
       }
 
       final payload = json.encode({
@@ -162,7 +202,7 @@ class AppwriteService {
       final accessToken = session.providerAccessToken;
 
       if (accessToken.isEmpty) {
-        throw AppwriteException('No access token available');
+        throw AppwriteException('No access token available (session missing or provider token empty)');
       }
 
       final payload = json.encode({

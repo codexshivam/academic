@@ -20,6 +20,16 @@ class AppwriteConfig {
   // Redirect URLs for OAuth (update these for production)
   static const String successUrl = 'https://auratune.shivamyadav.com.np';
   static const String failureUrl = 'https://auratune.shivamyadav.com.np';
+
+  // Spotify OAuth scopes required by the analyze-aura function. These
+  // should also be added to the Spotify app settings and configured in
+  // Appwrite's Spotify provider. When logging in, Appwrite will request
+  // these scopes so the access token has permission to read user data.
+  static const List<String> spotifyScopes = [
+    'user-top-read',
+    'user-read-email',
+    'user-read-private',
+  ];
 }
 
 // Instructions:
