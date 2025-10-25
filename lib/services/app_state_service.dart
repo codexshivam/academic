@@ -35,6 +35,14 @@ class AppStateService extends ChangeNotifier {
       final user = await _appwriteService.getCurrentUser();
       
       if (user != null) {
+        // Print session info for debugging (helps confirm whether the
+        // frontend actually has the Appwrite session/cookie and a provider
+        // access token). This helps explain why the function execution may
+        // not have been triggered.
+        try {
+          await _appwriteService.debugPrintSession();
+        } catch (_) {}
+
         _updateState(_state.copyWith(
           authState: AuthState.authenticated,
           isInitialized: true,

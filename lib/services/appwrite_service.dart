@@ -236,6 +236,51 @@ class AppwriteService {
     }
   }
 
+  // New flow: client computes aura vector and sends it to the function.
+  // The function will derive the Spotify user id from the access token if
+  // possible, otherwise it will use the provided spotifyId field.
+  Future<AuraData> submitAuraVector({
+    required String userId,
+    required String displayName,
+    required List<double> auraVector,
+    String? email,
+    String? profileImageUrl,
+  }) async {
+    try {
+      final session = await _account.getSession(sessionId: 'current');
+      final accessToken = session.providerAccessToken; // may be needed to derive Spotify id
+
+      final payload = json.encode({
+        'accessToken': accessToken, // optional but recommended for deriving spotifyId
+        'spotifyId': userId, // fallback; function prefers token-derived id
+        'displayName': displayName,
+        'auraVector': auraVector,
+        'email': email,
+        'profileImageUrl': profileImageUrl,
+      });
+
+      final result = await _functions.createExecution(
+        functionId: AppwriteConfig.analyzeFunctionId,
+        body: payload,
+      );
+
+      if (result.status == 'completed') {
+        final responseData = json.decode(result.responseBody);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          return AuraData.fromJson(responseData['data']);
+        } else if (responseData['spotifyId'] != null) {
+          return AuraData.fromJson(responseData);
+        } else {
+          throw AppwriteException('Invalid response format from function');
+        }
+      } else {
+        throw AppwriteException('Function execution failed: ${result.responseBody}');
+      }
+    } catch (e) {
+      throw AppwriteException('Failed to submit aura vector: $e');
+    }
+  }
+
   // Database methods
   Future<AuraData?> getUserAuraData(String userId) async {
     try {
