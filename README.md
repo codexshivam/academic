@@ -15,14 +15,11 @@
 </div>
 
 
-**AuraTune** is an AI-powered Python application that dives deep into your Spotify listening habits to generate a personalized “Musical Aura”.  
-It goes beyond just data — it connects emotion, rhythm, and personality through your favorite tracks.
+**AuraTune** is an AI-powered Python application that dives deep into your Spotify listening habits to generate a personalized “Musical Aura”. It goes beyond just data — it connects emotion, rhythm, and personality through your favorite tracks.
 
 ✨ With seamless integration of Google’s Gemini AI, AuraTune also recommends:  
 🎧 Books that match your vibe  
-🎬 Bollywood movies that reflect your mood  
-
-All of this is beautifully rendered in the terminal using Rich, giving you a visually delightful command-line experience.
+🎬 Bollywood movies that reflect your mood
 
 ---
 
