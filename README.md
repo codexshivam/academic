@@ -2,22 +2,28 @@
 
 <div align="center">
 
-Discover your Musical DNA & get AI-powered recommendations right in your terminal.
+✨ *Discover your Musical DNA and get AI-powered recommendations — right in your terminal!* ✨
 
-An Academic Project showcasing Python's Data Science Stack
+**An Academic Project Showcasing Python’s Data Science & AI Stack**
 
-<p>
-[![Implementation Guide](https://img.shields.io/badge/Implementation_Guide-D90429?style=for-the-badge&logo=book&logoColor=white)](IMPLEMENTATION_GUIDE.md)
-[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/codexshivam/auratune)
+---
+
+<p align="center">
+  <a href="IMPLEMENTATION_GUIDE.md">
+    <img src="https://img.shields.io/badge/Implementation_Guide-D90429?style=for-the-badge&logo=book&logoColor=white" alt="Implementation Guide">
+  </a>
+  <a href="https://github.com/codexshivam/auratune">
+    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
+  </a>
 </p>
 
-<p>
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Spotipy](https://img.shields.io/badge/Spotipy-1DB954?style=for-the-badge&logo=spotify&logoColor=white)
-![Rich](https://img.shields.io/badge/Rich-F37736?style=for-the-badge&logo=python&logoColor=white)
-![Gemini AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/Spotipy-1DB954?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotipy">
+  <img src="https://img.shields.io/badge/Rich-F37736?style=for-the-badge&logo=python&logoColor=white" alt="Rich">
+  <img src="https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI">
 </p>
 
 </div>
@@ -26,96 +32,135 @@ An Academic Project showcasing Python's Data Science Stack
 
 ## 📚 About This Project
 
-**AuraTune** is a local Python CLI that analyzes your Spotify listening habits to generate a personalized "Musical Aura." Version 2 integrates Google's Gemini AI to provide dynamic, AI-powered book and Bollywood movie recommendations that match your music vibe—all displayed beautifully in your terminal using the Rich library.
+**AuraTune** is a local Python CLI application that analyzes your **Spotify listening habits** to generate a personalized **“Musical Aura.”**  
+Version 2 introduces **Google’s Gemini AI** for dynamic, AI-powered **book** and **Bollywood movie recommendations** that align with your music vibe — beautifully displayed in your terminal using the **Rich** library.
 
-This project was developed as part of my academic coursework.
+> 🎓 *Developed as part of my academic coursework.*
 
-* **Student:** **Shivam Yadav**
-* **Program:** B.E. - Computer Science & Engineering
-* **Semester:** 1st
-* **Institution:** Chandigarh University
+**Student:** Shivam Yadav  
+**Program:** B.E. – Computer Science & Engineering  
+**Semester:** 1st  
+**Institution:** Chandigarh University  
 
 ---
 
 ## 🎯 Project Goals
 
-* Demonstrate **NumPy** for numerical analysis and **Pandas** for data manipulation.
-* Integrate a Large Language Model (**Google Gemini**) for personalized recommendations.
-* Provide a clean, user-friendly CLI experience using **Python** and **Rich**.
-* Explore data processing at scale by comparing Pandas with PySpark.
+- 🧮 Demonstrate **NumPy** for numerical analysis and **Pandas** for data manipulation.  
+- 🤖 Integrate **Google Gemini AI** for contextual, personalized recommendations.  
+- 💻 Provide a clean, interactive CLI experience using **Rich**.  
+- ⚙️ Explore scalable data processing by comparing **Pandas vs PySpark**.
 
 ---
 
 ## ✨ Key Features
 
-* **🎧 Personalized Aura Analysis:** Analyzes audio features (energy, danceability, valence, etc.) from your top Spotify tracks.
-* **🤖 AI Recommendations:** Uses Gemini to suggest books & Bollywood movies tailored to your unique musical aura.
-* **📈 Data-Driven Insights:** Leverages NumPy + Pandas for cleaning, aggregation, and vectorized analysis.
-* **📊 Beautiful Terminal UI:** Employs the Rich library for colorful, formatted output, including tables and panels.
+| Feature | Description |
+|----------|-------------|
+| 🎧 **Personalized Aura Analysis** | Analyzes your top Spotify tracks based on features like energy, danceability, valence, and tempo. |
+| 🤖 **AI Recommendations** | Uses Gemini to suggest books and Bollywood movies that match your unique “musical aura.” |
+| 📈 **Data-Driven Insights** | Leverages NumPy and Pandas for efficient data aggregation and feature analysis. |
+| 📊 **Beautiful Terminal UI** | Built using the Rich library for colorful tables, panels, and vibrant output. |
+| 🌐 **Scalable Exploration** | Experimental PySpark integration for handling large-scale music datasets. |
 
 ---
 
 ## 🛠️ Technology Stack (v2)
 
-### Core Logic
-* **Python 3.10+**: Core runtime
-* **NumPy**: Numerical computations & feature analysis
-* **Pandas**: Data cleaning, manipulation & aggregation
-* **Google Gemini**: AI-powered recommendations
-* **PySpark**: (Optional) For large-scale data processing exploration
+### 🧠 Core Logic & Data Science
+- **Python 3.10+** – Core runtime  
+- **NumPy** – Vectorized numerical operations  
+- **Pandas** – Data manipulation and aggregation  
+- **Google Gemini** – AI-based contextual recommendations  
 
-### API & UI
-* **Spotipy**: Spotify Web API integration
-* **Rich**: Beautiful terminal formatting (tables, panels, colors)
+### 🎧 API & Terminal UI
+- **Spotipy** – Spotify Web API integration  
+- **Rich** – Terminal visualization with colorized tables and panels  
+- **python-dotenv** – Manage environment variables securely  
+
+### ⚙️ Scalability (Exploratory)
+- **PySpark** – Optional large-scale data exploration
 
 ---
 
 ## 🚀 Getting Started
 
-This project runs as a Python script on your local machine.
+AuraTune runs locally as a simple Python script.
 
-### Prerequisites
+### ✅ Prerequisites
+- Python **3.10 or newer**
+- A **Spotify Developer Account** (for API credentials)
+- A **Google AI Studio Account** (for Gemini API key)
 
-* Python 3.10 or newer
-* A **Spotify Developer Account** to get:
-    * `SPOTIPY_CLIENT_ID`
-    * `SPOTIPY_CLIENT_SECRET`
-* A **Google AI Studio Account** to get:
-    * `GEMINI_API_KEY`
+---
 
-### Installation & Setup
+### 🧩 Installation & Setup
 
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/codexshivam/auratune.git](https://github.com/codexshivam/auratune.git)
-    cd auratune
-    ```
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/codexshivam/auratune.git
+cd auratune
+2. Set Up a Virtual Environment (Recommended)
+bash
+Copy code
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+3. Install Dependencies
+bash
+Copy code
+pip install numpy pandas spotipy rich google-generativeai python-dotenv
+Alternatively, if you have a requirements.txt file:
 
-2.  **Install dependencies:**
-    (It's highly recommended to use a virtual environment)
-    ```sh
-    # Create a virtual environment (optional but recommended)
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+bash
+Copy code
+pip install -r requirements.txt
+🔑 Configure Environment Variables
+Create a .env file in the project root and add your credentials:
 
-    # Install required packages
-    pip install numpy pandas spotipy rich google-generativeai python-dotenv
-    ```
-    *(Alternatively, if you have a `requirements.txt` file: `pip install -r requirements.txt`)*
+env
+Copy code
+SPOTIPY_CLIENT_ID='Your_Spotify_Client_ID_Here'
+SPOTIPY_CLIENT_SECRET='Your_Spotify_Client_Secret_Here'
+SPOTIPY_REDIRECT_URI='http://localhost:8888/callback'
+GEMINI_API_KEY='Your_Google_Gemini_API_Key_Here'
+💡 Note:
+Your SPOTIPY_REDIRECT_URI must exactly match the one set in your Spotify Developer Dashboard.
+For local development, http://localhost:8888/callback works perfectly.
 
-3.  **Set up Environment Variables:**
-    Create a file named `.env` in the root of the project directory and add your API keys:
-    ```.env
-    SPOTIPY_CLIENT_ID='Your_Spotify_Client_ID_Here'
-    SPOTIPY_CLIENT_SECRET='Your_Spotify_Client_Secret_Here'
-    SPOTIPY_REDIRECT_URI='http://localhost:8888/callback'
-    GEMINI_API_KEY='Your_Google_Gemini_API_Key_Here'
-    ```
-    > **Note:** The `SPOTIPY_REDIRECT_URI` must **exactly match** the one you set in your Spotify Developer Dashboard. `http://localhost:8888/callback` is a common one for local development.
+▶️ Run AuraTune
+Once everything is set up:
 
-### Running AuraTune
-
-Once your keys are in the `.env` file and all packages are installed:
-
-```sh
+bash
+Copy code
 python main.py
+(Replace main.py with your actual entry script if different.)
+
+🤝 Contributing
+Contributions are always welcome!
+If you'd like to enhance AuraTune, follow these steps:
+
+Fork the repository
+
+Create a feature branch: git checkout -b feature-name
+
+Commit your changes: git commit -m "Add new feature"
+
+Push the branch: git push origin feature-name
+
+Open a Pull Request
+
+For detailed contribution rules, see the Contribution Guidelines.
+
+📞 Connect with Me
+👨‍💻 Author: Shivam Yadav
+📧 Email: people@shivamyadav.com.np
+🌐 Demo: auratune.shivamyadav.com.np
+
+<div align="center">
+⭐ Star this repository if you enjoyed exploring the blend of NumPy, Pandas, and AI!
+
+Made with 💙 using Python and a touch of Gemini magic ✨
+<br><br>
+<sub>License: MIT</sub>
+
+</div> 
