@@ -1,4 +1,4 @@
-# 🎵 AuraTune (An AI Applications Project)
+# AuraTune (An AI Applications Project)
 
 <div align="center">
 
@@ -32,24 +32,11 @@
 ## 📚 About This Project
 
 **AuraTune** is a Python CLI that analyzes your **Spotify listening habits** to generate a personalized **“Musical Aura.”**  
-Version 2 integrates **Google’s Gemini AI** to recommend **books** and **Bollywood movies** that align with your unique music taste — all beautifully displayed in the terminal using the **Rich** library. 🎓 Developed as part of my academic coursework.
+This project also integrates **Google’s Gemini AI** to recommend **books** and **Bollywood movies** that align with your unique music taste — all beautifully displayed in the terminal using the **Rich** library. 🎓 Developed as part of my academic coursework.
 
 **Student:** Shivam Yadav  
 **Program:** B.E. – Computer Science & Engineering  
 **Semester:** 1st  
-**Institution:** Chandigarh University  
+**Institution:** Chandigarh University
 
 ---
-
-## 🏗️ Project Architecture
-
-```mermaid
-flowchart TD
-    A[🎧 Spotify User] -->|Top Tracks Request| B[Spotipy API]
-    B --> C[🎵 Audio Features Extraction]
-    C --> D[📊 DataFrame (Pandas + NumPy)]
-    D --> E[🧠 Aura Analysis Engine]
-    E --> F[🤖 Gemini AI Integration]
-    F --> G[📚 AI Recommendations (Books + Movies)]
-    G --> H[🎨 Rich CLI Renderer]
-    H --> I[🖥️ User Output in Terminal]
