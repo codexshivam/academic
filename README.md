@@ -5,8 +5,6 @@
 ✨ *Discover your Musical DNA and get AI-powered recommendations — right in your terminal!* ✨  
 **An Academic Project showcasing Python’s Data Science & AI Stack**
 
----
-
 <p align="center">
   <a href="IMPLEMENTATION_GUIDE.md">
     <img src="https://img.shields.io/badge/Implementation_Guide-D90429?style=for-the-badge&logo=book&logoColor=white" alt="Implementation Guide">
