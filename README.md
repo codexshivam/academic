@@ -12,8 +12,7 @@
 
 ## 📚 About This Project
 
-**AuraTune** is a Python project that analyzes your **Spotify listening habits** to generate a personalized **“Musical Aura.”**  
-This project also integrates **Google’s Gemini AI** to recommend **books** and **Bollywood movies** that align with your unique music taste — all beautifully displayed in the terminal using the **Rich** library. 🎓 Developed as part of our academic project.
+**AuraTune** is a Python project that analyzes your **Spotify listening habits** to generate a personalized **“Musical Aura.”** This project also integrates **Google’s Gemini AI** to recommend **books** and **Bollywood movies** that align with your unique music taste — all beautifully displayed in the terminal using the **Rich** library. 🎓 Developed as part of our academic project.
 
 **Team Members:** Shivam Yadav, Abhishek Singh, Sarvesh Gupta & Ronit Thakur  
 **Program:** B.E. – Computer Science & Engineering  
