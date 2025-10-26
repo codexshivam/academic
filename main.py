@@ -9,10 +9,10 @@ from rich.text import Text
 from rich.markdown import Markdown
 import google.generativeai as genai
 
-CLIENT_ID = '85cc994ecc764778a90c1128057b4434'
-CLIENT_SECRET = '244a57ea9f6f4ca8bf8a90b6f37a0199'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
 REDIRECT_URI = 'https://example.com/callback'
-GEMINI_API_KEY = 'AIzaSyAIjwdKHWr8hDicGVT1iy3bs4c8Kq9YtFE'
+GEMINI_API_KEY = ''
 
 AURA_FEATURES = ['energy', 'valence', 'danceability', 'acousticness', 'instrumentalness']
 FEATURE_NAMES = ['Energy', 'Happiness', 'Danceability', 'Acousticness', 'Instrumentalness']

@@ -4,14 +4,6 @@
   <p style="font-size:1.1rem; color:#444; max-width:900px; line-height:1.5;">
     Discover Your Musical DNA &amp; Get AI-Powered Recommendations
   </p>
-
-  <p>
-    <a href="https://auratune.shivamyadav.com.np">🌐 Live Demo</a>
-    &nbsp; | &nbsp;
-    <a href="IMPLEMENTATION_GUIDE.md">📚 Full Implementation Guide</a>
-    &nbsp; | &nbsp;
-    <strong>🚀 Get Started</strong>
-  </p>
 </div>
 
 ---
@@ -49,19 +41,19 @@ This diagram shows the flow of data from the user to the AI and back.
 
 ```mermaid
 graph TD
-    A[User 👤] -->|Logs in| B(Flutter Web App);
-    B -->|Authenticates| C[Appwrite Auth];
-    C -->|On Success| B;
-    B -->|Requests Analysis| D[Appwrite Function: analyze-aura];
-    D -->|Get Tracks| E[Spotify Web API 🎧];
-    E -->|Track Data| D;
-    D -->|Process Data| F[Python Runtime: NumPy & Pandas];
-    F -->|Aura Vector| D;
-    D -->|Get AI Recs| G[Google Gemini API 🤖];
-    G -->|Recommendations| D;
-    D -->|Save Profile| H[Appwrite Database 💾];
-    D -->|Returns (Aura + Recs)| B;
-    B -->|Displays Results| A;
+  A[User 👤] -->|Logs in| B(Flutter Web App)
+  B -->|Authenticates| C[Appwrite Auth]
+  C -->|On Success| B
+  B -->|Requests Analysis| D[Appwrite Function: analyze-aura]
+  D -->|Get Tracks| E[Spotify Web API 🎧]
+  E -->|Track Data| D
+  D -->|Process Data| F[Python Runtime: NumPy & Pandas]
+  F -->|Aura Vector| D
+  D -->|Get AI Recs| G[Google Gemini API 🤖]
+  G -->|Recommendations| D
+  D -->|Save Profile| H[Appwrite Database 💾]
+  D -->|Returns (Aura & Recs)| B
+  B -->|Displays Results| A
 ```
 
 ---
@@ -71,78 +63,105 @@ graph TD
 1) Pandas — The Data Organizer
 
 - Loads Spotify JSON into DataFrames for easy selection of audio features.
-- Handles missing data (dropna, fillna) and aggregation (groupby, mean).
+# 🎵 AuraTune v2 — Your AI-Powered Musical DNA
 
-2) NumPy — The Numerical Engine
+<div align="center">
 
-- Vectorized operations produce the final "Aura Vector" quickly (mean, std, normalization).
+Discover your Musical DNA & get AI-powered recommendations right in your terminal.
 
-3) Beyond Pandas: Scaling with PySpark
+An Academic Project by **Shivam Yadav** showcasing Python's Data Science Stack
 
-- Pandas is single-machine; PySpark enables distributed processing for massive scaling (1TB+).
+<p>
+[![Implementation Guide](https://img.shields.io/badge/Implementation_Guide-F02E65?style=for-the-badge&logo=book&logoColor=white)](IMPLEMENTATION_GUIDE.md)
+[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/codexshivam/auratune)
+</p>
 
-<details>
-<summary><b>Click to see Real-World Applications of this Tech</b></summary>
+<p>
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Spotipy](https://img.shields.io/badge/Spotipy-1DB954?style=for-the-badge&logo=spotify&logoColor=white)
+![Rich](https://img.shields.io/badge/Rich-FF00FF?style=for-the-badge&logo=python&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+</p>
 
-- 🎥 Netflix &amp; YouTube: Watch-history analysis and recommendations.
-- 🛒 Amazon &amp; Flipkart: Product recommendations using purchase/browse history.
-- 📱 Facebook &amp; Instagram: Feed personalization using like/share/watch time data.
+</div>
 
-</details>
+---
+
+## 📚 About This Project
+
+Hey there! I'm **Shivam Yadav**, a 1st semester CSE student at Chandigarh University. AuraTune is a local Python CLI that analyzes your Spotify listening habits to generate a personalized "Musical Aura." v2 adds Google Gemini for dynamic, AI-powered book and Bollywood movie recommendations that match your music vibe — displayed beautifully in your terminal using Rich.
+
+## 🎯 Project Goals
+
+- Demonstrate NumPy for numerical analysis and Pandas for data manipulation.
+- Integrate a Large Language Model (Google Gemini) for personalized recommendations.
+- Provide a clean, user-friendly CLI experience using Python and Rich.
+- Explore scaling options: Pandas vs PySpark.
+
+## ✨ Key Features
+
+- 🎧 Personalized Aura Analysis: Analyze audio features (energy, danceability, valence, etc.) from your top Spotify tracks.
+- 🤖 AI Recommendations: Gemini-based book & Bollywood movie suggestions tailored to your musical aura.
+- 📈 Data-Driven Insights: NumPy + Pandas for cleaning, aggregation, and vectorized analysis.
+- 📊 Beautiful Terminal UI: Rich-powered CLI output and colored summaries.
 
 ---
 
 ## 🛠️ Technology Stack (v2)
 
-| Category | Technology | Purpose |
-|---|---|---|
-| Frontend | Flutter Web | Responsive cross-platform UI |
-| Visualization | fl_chart | Radar chart for Aura visualization |
-| Backend | Appwrite Cloud | Auth, DB, Serverless Functions |
-| Data & AI | Python 3.10 | Backend logic and functions |
-|  | NumPy | Numerical computations |
-|  | Pandas | Data cleaning & aggregation |
-|  | Google Gemini | AI-powered recommendations |
-|  | PySpark | Scaling to big data (optional) |
-|  | Spotipy | Spotify Web API integration |
-| DevOps | GitHub Actions | CI/CD |
-| Hosting | GitHub Pages | Hosting Flutter web app |
+Core Logic
+
+- Python 3.10 — Core runtime
+- NumPy — Numerical computations
+- Pandas — Data cleaning & aggregation
+- Google Gemini — AI-powered recommendations
+- PySpark — Optional for large-scale processing
+
+API & UI
+
+- Spotipy — Spotify Web API integration
+- Rich — Beautiful terminal formatting (tables, panels, colors)
 
 ---
 
 ## 🚀 Get Started (Quick)
 
-This project is split into two parts: the Flutter frontend and the Appwrite serverless backend.
+This project runs as a single Python script on your local machine.
 
 Prerequisites
 
-- Flutter SDK (3.19.0+)
 - Python 3.10+
-- Appwrite CLI (for deploy)
-- Spotify Developer account, Appwrite Cloud account, Google AI Studio account
+- Spotify Developer account (client id & secret)
+- Google AI Studio / Gemini API key
 
-Quick backend (Python function) setup example:
+Quick setup
 
 ```bash
-# create virtualenv
+# 1. (Optional) clone the repo
+git clone https://github.com/codexshivam/auratune.git
+cd auratune
+
+# 2. create & activate virtualenv
 python3.10 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt  # contains spotipy, pandas, numpy, google-ai-lib (example)
 
-# run unit tests (if any)
-pytest -q
+# 3. install deps
+pip install -r requirements.txt
+
+# 4. set required environment variables (example)
+export SPOTIPY_CLIENT_ID="your_spotify_client_id"
+export SPOTIPY_CLIENT_SECRET="your_spotify_client_secret"
+export SPOTIPY_REDIRECT_URI="http://localhost:8888/callback"
+export GEMINI_API_KEY="your_gemini_api_key"
+
+# 5. run the CLI (example)
+python3 main.py --help
+python3 main.py analyze --top 50
 ```
 
-Flutter frontend (dev):
-
-```bash
-flutter pub get
-flutter run -d chrome
-```
-
-For a complete step-by-step guide to deploy and configure Appwrite, Spotify, and Google Gemini, see:
-
-➡️ View the Full IMPLEMENTATION_GUIDE.md
+See `IMPLEMENTATION_GUIDE.md` for a full step-by-step configuration and deployment guide.
 
 ---
 
@@ -153,41 +172,29 @@ For a complete step-by-step guide to deploy and configure Appwrite, Spotify, and
 - Semester: 1st
 - Institution: Chandigarh University
 
-This project demonstrates practical data science concepts from early coursework using a real-world API and simple AI integration.
-
 ---
 
 ## 🤝 Contributing
 
-Contributions and feedback are welcome!
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/NewAnalysis`
-3. Commit your changes: `git commit -m 'Add new feature'`
-4. Push: `git push origin feature/NewAnalysis`
-5. Open a Pull Request
+Contributions are welcome — fork, branch, push, and open a PR. See the contribution steps in this repo.
 
 ---
 
-## 📞 Contact & Connect
+## 📞 Contact
 
-**Shivam Yadav**
-
-- 🎓 1st Semester CSE Student at Chandigarh University 🇳🇵 Nepal
-- 🎂 Birthday: August 21
-
-Project Demo: https://auratune.shivamyadav.com.np
-
-Email: people@shivamyadav.com.np
+- Email: people@shivamyadav.com.np
+- Demo: https://auratune.shivamyadav.com.np
 
 <div align="center">
-⭐ Star this repository if you found the NumPy, Pandas, and AI implementation helpful!
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/codexshivam)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ycsxshivam)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/ycs.shivam)
 </div>
 
 ---
 
-Thank you for checking out AuraTune 🎵 — built with passion, curiosity, and data.
+⭐ Star this repository if you found the NumPy, Pandas, and AI implementation helpful!
 
 ---
 
-License: MIT
+License: [MIT](LICENSE)
