@@ -1,18 +1,9 @@
-# AuraTune (An AI Applications Project)
+# AuraTune Project
 
 <div align="center">
 
 ✨ *Discover your Musical DNA and get AI-powered recommendations — right in your terminal!* ✨  
 **An Academic Project showcasing Python’s Data Science & AI Stack**
-
-<p align="center">
-  <a href="IMPLEMENTATION_GUIDE.md">
-    <img src="https://img.shields.io/badge/Implementation_Guide-D90429?style=for-the-badge&logo=book&logoColor=white" alt="Implementation Guide">
-  </a>
-  <a href="https://github.com/codexshivam/auratune">
-    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
-  </a>
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
