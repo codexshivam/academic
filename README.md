@@ -1,8 +1,4 @@
 <div align="center">
-
-# 🎵 **AuraTune**  
-### _Your Music. Your Mood. Your Story._
-
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
@@ -15,8 +11,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Last%20Updated-October%2027,%202025-ff69b4?style=for-the-badge" alt="Last Updated">
 </p>
-
----
 
 </div>
 
@@ -54,16 +48,6 @@ All of this is beautifully rendered in the terminal using **Rich**, giving you a
 | 🐼 **Pandas** | Data analysis & structuring |
 | 🌈 **Rich** | Stylish terminal output |
 | 🤖 **Gemini AI** | AI-based content & recommendation system |
-
----
-
-## ⚙️ **Features**
-
-✅ Analyze your Spotify top artists, genres & tracks  
-✅ Generate your unique “Musical Aura” visualization  
-✅ AI-powered book & movie recommendations  
-✅ Rich-powered colorful terminal output  
-✅ Lightweight, modular & easy to extend  
 
 ---
 
