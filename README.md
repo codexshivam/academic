@@ -14,7 +14,7 @@
 
 </div>
 
-## 📚 **About This Project**
+## **About This Project**
 
 **AuraTune** is an AI-powered **Python application** that dives deep into your **Spotify listening habits** to generate a **personalized “Musical Aura”** 🎶.  
 It goes beyond just data — it connects **emotion, rhythm, and personality** through your favorite tracks.
@@ -48,12 +48,5 @@ All of this is beautifully rendered in the terminal using **Rich**, giving you a
 | 🐼 **Pandas** | Data analysis & structuring |
 | 🌈 **Rich** | Stylish terminal output |
 | 🤖 **Gemini AI** | AI-based content & recommendation system |
-
----
-
-## 🗓️ **Last Updated**
-
-**October 27, 2025**  
-_Developed with ❤️ by Team AuraTune_
 
 ---
