@@ -1,10 +1,4 @@
-# AuraTune Project
-
 <div align="center">
-
-✨ *Discover your Musical DNA and get AI-powered recommendations — right in your terminal!* ✨  
-**An Academic Project showcasing Python’s Data Science & AI Stack**
-
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
@@ -15,8 +9,6 @@
 </p>
 
 </div>
-
----
 
 ## 📚 About This Project
 
