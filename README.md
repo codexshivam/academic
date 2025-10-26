@@ -1,78 +1,13 @@
-<div align="center">
-  <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">🎵 <span style="color:#8A2BE2;">AuraTune</span> v2 - Your AI-Powered Musical DNA</h1>
-
-  <p style="font-size:1.1rem; color:#444; max-width:900px; line-height:1.5;">
-    Discover Your Musical DNA &amp; Get AI-Powered Recommendations
-  </p>
-</div>
-
----
-
-## 📚 About This Project
-
-Hey there! I'm **Shivam Yadav**, a 1st semester CSE student at Chandigarh University. This academic project demonstrates the power of Python's data science stack (NumPy &amp; Pandas) to build a real-world application.
-
-AuraTune analyzes your Spotify listening habits to generate a personalized "Musical Aura." In v2, AuraTune integrates the Google Gemini API to provide dynamic, AI-powered book and Bollywood movie recommendations that match your unique music vibe.
-
----
-
-## 🎯 Project Goals
-
-- Demonstrate practical application of NumPy for numerical analysis and Pandas for data manipulation.
-- Integrate a Large Language Model (Google Gemini) for intelligent, personalized recommendations.
-- Build a modern full-stack app with Flutter (frontend) and Appwrite (serverless backend).
-- Explore data scaling: Pandas vs PySpark.
-
----
-
-## ✨ Key Features
-
-- 🎧 Personalized Aura Analysis — Securely analyzes your top Spotify tracks' audio features (energy, danceability, valence, etc.).
-- 🤖 AI-Powered Recommendations — Google Gemini generates books & Bollywood movie suggestions based on your musical personality.
-- 📈 Data-Driven Insights — NumPy &amp; Pandas power the cleaning, processing, and creation of your "Aura Vector." 
-- 📊 Beautiful Visualization — A clean radar chart (Fl\_chart) displays your musical DNA in the Flutter app.
-- ☁️ Serverless Architecture — Appwrite Cloud handles auth, database, and serverless Python functions.
-
----
-
-## 🏗️ Architecture (v2)
-
-This diagram shows the flow of data from the user to the AI and back.
-
-```mermaid
-graph TD
-  A[User 👤] -->|Logs in| B(Flutter Web App)
-  B -->|Authenticates| C[Appwrite Auth]
-  C -->|On Success| B
-  B -->|Requests Analysis| D[Appwrite Function: analyze-aura]
-  D -->|Get Tracks| E[Spotify Web API 🎧]
-  E -->|Track Data| D
-  D -->|Process Data| F[Python Runtime: NumPy & Pandas]
-  F -->|Aura Vector| D
-  D -->|Get AI Recs| G[Google Gemini API 🤖]
-  G -->|Recommendations| D
-  D -->|Save Profile| H[Appwrite Database 💾]
-  D -->|Returns (Aura & Recs)| B
-  B -->|Displays Results| A
-```
-
----
-
-## 🧠 How Python's Data Stack Powers This
-
-1) Pandas — The Data Organizer
-
-- Loads Spotify JSON into DataFrames for easy selection of audio features.
-# 🎵 AuraTune v2 — Your AI-Powered Musical DNA
+# 🎵 AuraTune (An AI Applications Project)
 
 <div align="center">
 
 Discover your Musical DNA & get AI-powered recommendations right in your terminal.
 
-An Academic Project by **Shivam Yadav** showcasing Python's Data Science Stack
+An Academic Project showcasing Python's Data Science Stack
 
 <p>
-[![Implementation Guide](https://img.shields.io/badge/Implementation_Guide-F02E65?style=for-the-badge&logo=book&logoColor=white)](IMPLEMENTATION_GUIDE.md)
+[![Implementation Guide](https://img.shields.io/badge/Implementation_Guide-D90429?style=for-the-badge&logo=book&logoColor=white)](IMPLEMENTATION_GUIDE.md)
 [![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/codexshivam/auratune)
 </p>
 
@@ -81,7 +16,7 @@ An Academic Project by **Shivam Yadav** showcasing Python's Data Science Stack
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![Spotipy](https://img.shields.io/badge/Spotipy-1DB954?style=for-the-badge&logo=spotify&logoColor=white)
-![Rich](https://img.shields.io/badge/Rich-FF00FF?style=for-the-badge&logo=python&logoColor=white)
+![Rich](https://img.shields.io/badge/Rich-F37736?style=for-the-badge&logo=python&logoColor=white)
 ![Gemini AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
 </p>
 
@@ -91,110 +26,96 @@ An Academic Project by **Shivam Yadav** showcasing Python's Data Science Stack
 
 ## 📚 About This Project
 
-Hey there! I'm **Shivam Yadav**, a 1st semester CSE student at Chandigarh University. AuraTune is a local Python CLI that analyzes your Spotify listening habits to generate a personalized "Musical Aura." v2 adds Google Gemini for dynamic, AI-powered book and Bollywood movie recommendations that match your music vibe — displayed beautifully in your terminal using Rich.
+**AuraTune** is a local Python CLI that analyzes your Spotify listening habits to generate a personalized "Musical Aura." Version 2 integrates Google's Gemini AI to provide dynamic, AI-powered book and Bollywood movie recommendations that match your music vibe—all displayed beautifully in your terminal using the Rich library.
+
+This project was developed as part of my academic coursework.
+
+* **Student:** **Shivam Yadav**
+* **Program:** B.E. - Computer Science & Engineering
+* **Semester:** 1st
+* **Institution:** Chandigarh University
+
+---
 
 ## 🎯 Project Goals
 
-- Demonstrate NumPy for numerical analysis and Pandas for data manipulation.
-- Integrate a Large Language Model (Google Gemini) for personalized recommendations.
-- Provide a clean, user-friendly CLI experience using Python and Rich.
-- Explore scaling options: Pandas vs PySpark.
+* Demonstrate **NumPy** for numerical analysis and **Pandas** for data manipulation.
+* Integrate a Large Language Model (**Google Gemini**) for personalized recommendations.
+* Provide a clean, user-friendly CLI experience using **Python** and **Rich**.
+* Explore data processing at scale by comparing Pandas with PySpark.
+
+---
 
 ## ✨ Key Features
 
-- 🎧 Personalized Aura Analysis: Analyze audio features (energy, danceability, valence, etc.) from your top Spotify tracks.
-- 🤖 AI Recommendations: Gemini-based book & Bollywood movie suggestions tailored to your musical aura.
-- 📈 Data-Driven Insights: NumPy + Pandas for cleaning, aggregation, and vectorized analysis.
-- 📊 Beautiful Terminal UI: Rich-powered CLI output and colored summaries.
+* **🎧 Personalized Aura Analysis:** Analyzes audio features (energy, danceability, valence, etc.) from your top Spotify tracks.
+* **🤖 AI Recommendations:** Uses Gemini to suggest books & Bollywood movies tailored to your unique musical aura.
+* **📈 Data-Driven Insights:** Leverages NumPy + Pandas for cleaning, aggregation, and vectorized analysis.
+* **📊 Beautiful Terminal UI:** Employs the Rich library for colorful, formatted output, including tables and panels.
 
 ---
 
 ## 🛠️ Technology Stack (v2)
 
-Core Logic
+### Core Logic
+* **Python 3.10+**: Core runtime
+* **NumPy**: Numerical computations & feature analysis
+* **Pandas**: Data cleaning, manipulation & aggregation
+* **Google Gemini**: AI-powered recommendations
+* **PySpark**: (Optional) For large-scale data processing exploration
 
-- Python 3.10 — Core runtime
-- NumPy — Numerical computations
-- Pandas — Data cleaning & aggregation
-- Google Gemini — AI-powered recommendations
-- PySpark — Optional for large-scale processing
-
-API & UI
-
-- Spotipy — Spotify Web API integration
-- Rich — Beautiful terminal formatting (tables, panels, colors)
+### API & UI
+* **Spotipy**: Spotify Web API integration
+* **Rich**: Beautiful terminal formatting (tables, panels, colors)
 
 ---
 
-## 🚀 Get Started (Quick)
+## 🚀 Getting Started
 
-This project runs as a single Python script on your local machine.
+This project runs as a Python script on your local machine.
 
-Prerequisites
+### Prerequisites
 
-- Python 3.10+
-- Spotify Developer account (client id & secret)
-- Google AI Studio / Gemini API key
+* Python 3.10 or newer
+* A **Spotify Developer Account** to get:
+    * `SPOTIPY_CLIENT_ID`
+    * `SPOTIPY_CLIENT_SECRET`
+* A **Google AI Studio Account** to get:
+    * `GEMINI_API_KEY`
 
-Quick setup
+### Installation & Setup
 
-```bash
-# 1. (Optional) clone the repo
-git clone https://github.com/codexshivam/auratune.git
-cd auratune
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/codexshivam/auratune.git](https://github.com/codexshivam/auratune.git)
+    cd auratune
+    ```
 
-# 2. create & activate virtualenv
-python3.10 -m venv .venv
-source .venv/bin/activate
+2.  **Install dependencies:**
+    (It's highly recommended to use a virtual environment)
+    ```sh
+    # Create a virtual environment (optional but recommended)
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# 3. install deps
-pip install -r requirements.txt
+    # Install required packages
+    pip install numpy pandas spotipy rich google-generativeai python-dotenv
+    ```
+    *(Alternatively, if you have a `requirements.txt` file: `pip install -r requirements.txt`)*
 
-# 4. set required environment variables (example)
-export SPOTIPY_CLIENT_ID="your_spotify_client_id"
-export SPOTIPY_CLIENT_SECRET="your_spotify_client_secret"
-export SPOTIPY_REDIRECT_URI="http://localhost:8888/callback"
-export GEMINI_API_KEY="your_gemini_api_key"
+3.  **Set up Environment Variables:**
+    Create a file named `.env` in the root of the project directory and add your API keys:
+    ```.env
+    SPOTIPY_CLIENT_ID='Your_Spotify_Client_ID_Here'
+    SPOTIPY_CLIENT_SECRET='Your_Spotify_Client_Secret_Here'
+    SPOTIPY_REDIRECT_URI='http://localhost:8888/callback'
+    GEMINI_API_KEY='Your_Google_Gemini_API_Key_Here'
+    ```
+    > **Note:** The `SPOTIPY_REDIRECT_URI` must **exactly match** the one you set in your Spotify Developer Dashboard. `http://localhost:8888/callback` is a common one for local development.
 
-# 5. run the CLI (example)
-python3 main.py --help
-python3 main.py analyze --top 50
-```
+### Running AuraTune
 
-See `IMPLEMENTATION_GUIDE.md` for a full step-by-step configuration and deployment guide.
+Once your keys are in the `.env` file and all packages are installed:
 
----
-
-## 🎓 Academic Context
-
-- Student: **Shivam Yadav**
-- Program: B.E. - Computer Science &amp; Engineering
-- Semester: 1st
-- Institution: Chandigarh University
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome — fork, branch, push, and open a PR. See the contribution steps in this repo.
-
----
-
-## 📞 Contact
-
-- Email: people@shivamyadav.com.np
-- Demo: https://auratune.shivamyadav.com.np
-
-<div align="center">
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/codexshivam)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ycsxshivam)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/ycs.shivam)
-</div>
-
----
-
-⭐ Star this repository if you found the NumPy, Pandas, and AI implementation helpful!
-
----
-
-License: [MIT](LICENSE)
+```sh
+python main.py
