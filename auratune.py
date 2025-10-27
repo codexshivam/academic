@@ -1,3 +1,9 @@
+# Last updated on October 27, 2025 11:32 PM IST
+# AI Applications Lab (Semester 1, 2025-2026)
+
+# This script analyzes a Spotify user's listening habits to determine their "musical aura"
+# and provides personalized Bollywood movie and book recommendations using AI.
+
 import spotipy
 import pandas as pd
 import numpy as np
