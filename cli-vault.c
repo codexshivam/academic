@@ -1,15 +1,13 @@
-/* Last updated on October 27, 2025 11:45 PM IST
-Logical Thinking & Problem Solving (Semester 1, 2025-2026)
-
-This script is a command-line C program that acts as a personal vault, letting you store and search academic terms by subject and securely manage your private passwords and secrets.*/
-
 #include <stdio.h>
 #include <string.h> 
 
-#define MAX_SUBJECTS 50        
-#define MAX_TERMS_PER_SUBJECT 500 
-#define MAX_SECRETS 500
-#define MAX_STRLEN 500         
+#define MAX_SUBJECTS 10        
+#define MAX_TERMS_PER_SUBJECT 20 
+#define MAX_SECRETS 50
+#define MAX_STRLEN 200         
+
+#define SUBJECT_FILE "subjects.dat"
+#define SECRET_FILE "secrets.dat"
 
 struct Term {
     char name[MAX_STRLEN];
@@ -33,6 +31,59 @@ int subject_count = 0;
 
 struct Secret all_secrets[MAX_SECRETS];
 int secret_count = 0;
+
+void saveSubjects() {
+    FILE *file = fopen(SUBJECT_FILE, "wb"); 
+    if (file == NULL) {
+        printf("Error: Could not open file %s for saving.\n", SUBJECT_FILE);
+        return;
+    }
+    
+    fwrite(&subject_count, sizeof(int), 1, file);
+    fwrite(all_subjects, sizeof(struct Subject), subject_count, file);
+    
+    fclose(file);
+}
+
+void loadSubjects() {
+    FILE *file = fopen(SUBJECT_FILE, "rb"); 
+    if (file == NULL) {
+        subject_count = 0;
+        return;
+    }
+
+    if (fread(&subject_count, sizeof(int), 1, file) != 1) {
+        subject_count = 0;
+    }
+    
+    fread(all_subjects, sizeof(struct Subject), subject_count, file);
+    
+    fclose(file);
+}
+
+void saveSecrets() {
+    FILE *file = fopen(SECRET_FILE, "wb");
+    if (file == NULL) {
+        printf("Error: Could not open file %s for saving.\n", SECRET_FILE);
+        return;
+    }
+    fwrite(&secret_count, sizeof(int), 1, file);
+    fwrite(all_secrets, sizeof(struct Secret), secret_count, file);
+    fclose(file);
+}
+
+void loadSecrets() {
+    FILE *file = fopen(SECRET_FILE, "rb");
+    if (file == NULL) {
+        secret_count = 0;
+        return;
+    }
+    if (fread(&secret_count, sizeof(int), 1, file) != 1) {
+        secret_count = 0;
+    }
+    fread(all_secrets, sizeof(struct Secret), secret_count, file);
+    fclose(file);
+}
 
 void clearInputBuffer() {
     int c;
@@ -58,6 +109,7 @@ void addSubject() {
     
     printf("Subject '%s' added successfully.\n", all_subjects[subject_count].name);
     subject_count++; 
+    saveSubjects(); 
 }
 
 int selectSubject() {
@@ -110,6 +162,7 @@ void addTerm() {
     selected_subject->term_count++;
     
     printf("Term '%s' added to '%s'.\n", new_term->name, selected_subject->name);
+    saveSubjects(); 
 }
 
 void searchTerm() {
@@ -228,6 +281,7 @@ void addSecret() {
 
     secret_count++;
     printf("Secret for '%s' added successfully.\n", new_secret->service);
+    saveSecrets(); 
 }
 
 void searchSecrets() {
@@ -288,6 +342,9 @@ void searchSecrets() {
 
 int main() {
     int choice;
+
+    loadSubjects(); 
+    loadSecrets();  
 
     do {
         printf("\n--- Subject-Based Dictionary ---\n");
