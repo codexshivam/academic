@@ -1,13 +1,14 @@
 #include <stdio.h>
-#include <string.h> 
+#include <string.h>
+#include <stdlib.h>
 
-#define MAX_SUBJECTS 10        
-#define MAX_TERMS_PER_SUBJECT 20 
+#define MAX_SUBJECTS 10
+#define MAX_TERMS_PER_SUBJECT 20
 #define MAX_SECRETS 50
-#define MAX_STRLEN 200         
+#define MAX_STRLEN 200
 
-#define SUBJECT_FILE "subjects.dat"
-#define SECRET_FILE "secrets.dat"
+#define SUBJECT_FILE "subjects.txt"
+#define SECRET_FILE "secrets.txt"
 
 struct Term {
     char name[MAX_STRLEN];
@@ -16,8 +17,8 @@ struct Term {
 
 struct Subject {
     char name[MAX_STRLEN];
-    struct Term terms[MAX_TERMS_PER_SUBJECT]; 
-    int term_count;                         
+    struct Term terms[MAX_TERMS_PER_SUBJECT];
+    int term_count;
 };
 
 struct Secret {
@@ -27,61 +28,140 @@ struct Secret {
 };
 
 struct Subject all_subjects[MAX_SUBJECTS];
-int subject_count = 0; 
+int subject_count = 0;
 
 struct Secret all_secrets[MAX_SECRETS];
 int secret_count = 0;
 
+void clearScreen() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
+void pressEnterToContinue() {
+    printf("\nPress Enter to continue...");
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+void printHeader(const char* title) {
+    clearScreen();
+    printf("\n==========================================\n");
+    printf("          CLI VAULT - %s\n", title);
+    printf("==========================================\n\n");
+}
+
+void stripNewline(char *buffer) {
+    buffer[strcspn(buffer, "\n")] = 0;
+}
+
 void saveSubjects() {
-    FILE *file = fopen(SUBJECT_FILE, "wb"); 
+    FILE *file = fopen(SUBJECT_FILE, "w");
     if (file == NULL) {
         printf("Error: Could not open file %s for saving.\n", SUBJECT_FILE);
         return;
     }
-    
-    fwrite(&subject_count, sizeof(int), 1, file);
-    fwrite(all_subjects, sizeof(struct Subject), subject_count, file);
-    
+
+    fprintf(file, "%d\n", subject_count);
+
+    for (int i = 0; i < subject_count; i++) {
+        fprintf(file, "%s\n", all_subjects[i].name);
+        fprintf(file, "%d\n", all_subjects[i].term_count);
+
+        for (int j = 0; j < all_subjects[i].term_count; j++) {
+            fprintf(file, "%s\n", all_subjects[i].terms[j].name);
+            fprintf(file, "%s\n", all_subjects[i].terms[j].definition);
+        }
+    }
     fclose(file);
 }
 
 void loadSubjects() {
-    FILE *file = fopen(SUBJECT_FILE, "rb"); 
+    FILE *file = fopen(SUBJECT_FILE, "r");
     if (file == NULL) {
         subject_count = 0;
         return;
     }
 
-    if (fread(&subject_count, sizeof(int), 1, file) != 1) {
-        subject_count = 0;
+    char buffer[MAX_STRLEN];
+
+    if (fgets(buffer, MAX_STRLEN, file) == NULL) {
+        fclose(file);
+        return;
     }
-    
-    fread(all_subjects, sizeof(struct Subject), subject_count, file);
-    
+    sscanf(buffer, "%d", &subject_count);
+
+    if (subject_count > MAX_SUBJECTS) subject_count = MAX_SUBJECTS;
+
+    for (int i = 0; i < subject_count; i++) {
+        if (fgets(all_subjects[i].name, MAX_STRLEN, file) == NULL) break;
+        stripNewline(all_subjects[i].name);
+
+        if (fgets(buffer, MAX_STRLEN, file) == NULL) break;
+        sscanf(buffer, "%d", &all_subjects[i].term_count);
+
+        if (all_subjects[i].term_count > MAX_TERMS_PER_SUBJECT) {
+            all_subjects[i].term_count = MAX_TERMS_PER_SUBJECT;
+        }
+
+        for (int j = 0; j < all_subjects[i].term_count; j++) {
+            if (fgets(all_subjects[i].terms[j].name, MAX_STRLEN, file) == NULL) break;
+            stripNewline(all_subjects[i].terms[j].name);
+            
+            if (fgets(all_subjects[i].terms[j].definition, MAX_STRLEN, file) == NULL) break;
+            stripNewline(all_subjects[i].terms[j].definition);
+        }
+    }
     fclose(file);
 }
 
 void saveSecrets() {
-    FILE *file = fopen(SECRET_FILE, "wb");
+    FILE *file = fopen(SECRET_FILE, "w");
     if (file == NULL) {
         printf("Error: Could not open file %s for saving.\n", SECRET_FILE);
         return;
     }
-    fwrite(&secret_count, sizeof(int), 1, file);
-    fwrite(all_secrets, sizeof(struct Secret), secret_count, file);
+
+    fprintf(file, "%d\n", secret_count);
+
+    for (int i = 0; i < secret_count; i++) {
+        fprintf(file, "%s\n", all_secrets[i].service);
+        fprintf(file, "%s\n", all_secrets[i].username);
+        fprintf(file, "%s\n", all_secrets[i].secret_key);
+    }
     fclose(file);
 }
 
 void loadSecrets() {
-    FILE *file = fopen(SECRET_FILE, "rb");
+    FILE *file = fopen(SECRET_FILE, "r");
     if (file == NULL) {
         secret_count = 0;
         return;
     }
-    if (fread(&secret_count, sizeof(int), 1, file) != 1) {
-        secret_count = 0;
+
+    char buffer[MAX_STRLEN];
+
+    if (fgets(buffer, MAX_STRLEN, file) == NULL) {
+        fclose(file);
+        return;
     }
-    fread(all_secrets, sizeof(struct Secret), secret_count, file);
+    sscanf(buffer, "%d", &secret_count);
+
+    if (secret_count > MAX_SECRETS) secret_count = MAX_SECRETS;
+
+    for (int i = 0; i < secret_count; i++) {
+        if (fgets(all_secrets[i].service, MAX_STRLEN, file) == NULL) break;
+        stripNewline(all_secrets[i].service);
+
+        if (fgets(all_secrets[i].username, MAX_STRLEN, file) == NULL) break;
+        stripNewline(all_secrets[i].username);
+
+        if (fgets(all_secrets[i].secret_key, MAX_STRLEN, file) == NULL) break;
+        stripNewline(all_secrets[i].secret_key);
+    }
     fclose(file);
 }
 
@@ -92,11 +172,11 @@ void clearInputBuffer() {
 
 void readString(char* buffer, int length) {
     fgets(buffer, length, stdin);
-    buffer[strcspn(buffer, "\n")] = 0;
+    stripNewline(buffer);
 }
 
 void addSubject() {
-    printf("\n--- Add New Subject ---\n");
+    printHeader("Add New Subject");
     if (subject_count >= MAX_SUBJECTS) {
         printf("Error: Maximum number of subjects (%d) reached.\n", MAX_SUBJECTS);
         return;
@@ -108,8 +188,8 @@ void addSubject() {
     all_subjects[subject_count].term_count = 0;
     
     printf("Subject '%s' added successfully.\n", all_subjects[subject_count].name);
-    subject_count++; 
-    saveSubjects(); 
+    subject_count++;
+    saveSubjects();
 }
 
 int selectSubject() {
@@ -126,21 +206,21 @@ int selectSubject() {
     int choice;
     printf("Select a subject (1-%d): ", subject_count);
     scanf("%d", &choice);
-    clearInputBuffer(); 
+    clearInputBuffer();
 
     if (choice < 1 || choice > subject_count) {
         printf("Invalid selection.\n");
         return -1;
     }
     
-    return choice - 1; 
+    return choice - 1;
 }
 
 void addTerm() {
-    printf("\n--- Add New Term ---\n");
-    int subject_index = selectSubject(); 
+    printHeader("Add New Term");
+    int subject_index = selectSubject();
 
-    if (subject_index == -1) { 
+    if (subject_index == -1) {
         return;
     }
 
@@ -162,12 +242,12 @@ void addTerm() {
     selected_subject->term_count++;
     
     printf("Term '%s' added to '%s'.\n", new_term->name, selected_subject->name);
-    saveSubjects(); 
+    saveSubjects();
 }
 
 void searchTerm() {
-    printf("\n--- Search for Term (Exact Match) ---\n");
-    int subject_index = selectSubject(); 
+    printHeader("Search in Subject");
+    int subject_index = selectSubject();
 
     if (subject_index == -1) {
         return;
@@ -190,7 +270,7 @@ void searchTerm() {
             printf("Subject: %s\n", selected_subject->name);
             printf("Term: %s\n", selected_subject->terms[i].name);
             printf("Definition: %s\n", selected_subject->terms[i].definition);
-            return; 
+            return;
         }
     }
 
@@ -198,7 +278,7 @@ void searchTerm() {
 }
 
 void fullTextSearch() {
-    printf("\n--- Full-Text Search (All Subjects) ---\n");
+    printHeader("Full-Text Search");
     
     if (subject_count == 0) {
         printf("Dictionary is empty. Add a subject first.\n");
@@ -237,7 +317,7 @@ void fullTextSearch() {
 
 
 void viewAll() {
-    printf("\n--- Full Dictionary ---\n");
+    printHeader("Full Dictionary");
     if (subject_count == 0) {
         printf("Dictionary is empty. Add a subject first.\n");
         return;
@@ -262,7 +342,7 @@ void viewAll() {
 }
 
 void addSecret() {
-    printf("\n--- Add New Secret ---\n");
+    printHeader("Add New Secret");
     if (secret_count >= MAX_SECRETS) {
         printf("Error: Maximum number of secrets (%d) reached.\n", MAX_SECRETS);
         return;
@@ -281,11 +361,11 @@ void addSecret() {
 
     secret_count++;
     printf("Secret for '%s' added successfully.\n", new_secret->service);
-    saveSecrets(); 
+    saveSecrets();
 }
 
 void searchSecrets() {
-    printf("\n--- Search Secrets ---\n");
+    printHeader("Search Secrets");
     
     if (secret_count == 0) {
         printf("No secrets saved yet.\n");
@@ -343,53 +423,65 @@ void searchSecrets() {
 int main() {
     int choice;
 
-    loadSubjects(); 
-    loadSecrets();  
+    loadSubjects();
+    loadSecrets();
 
     do {
-        printf("\n--- Subject-Based Dictionary ---\n");
-        printf("1. Add New Subject\n");
-        printf("2. Add New Term (to a Subject)\n");
-        printf("3. Search for Term in Specific Subject\n");
-        printf("4. Search (All Subjects)\n");
-        printf("5. View All Subjects and Terms\n");
-        printf("--- Passwords & Secrets Manager ---\n");
-        printf("6. Add New Password/Secret\n");
-        printf("7. Search Passwords & Secrets\n");
-        printf("8. Exit\n");
+        clearScreen();
+        printf("\n==================================\n");
+        printf("          CLI VAULT MAIN MENU\n");
+        printf("==================================\n");
+        printf("  1. Add New Subject\n");
+        printf("  2. Add New Term\n");
+        printf("  3. Search in Subject\n");
+        printf("  4. Full-Text Search\n");
+        printf("  5. View All Subjects & Terms\n");
+        printf("  6. Add New Password/Secret\n");
+        printf("  7. Search Passwords & Secrets\n");
+        printf("  8. Exit\n");
         printf("----------------------------------\n");
         printf("Enter your choice: ");
 
-        scanf("%d", &choice);
-        clearInputBuffer(); 
+        if (scanf("%d", &choice) != 1) {
+            choice = -1;
+        }
+        clearInputBuffer();
 
         switch (choice) {
             case 1:
                 addSubject();
+                pressEnterToContinue();
                 break;
             case 2:
                 addTerm();
+                pressEnterToContinue();
                 break;
             case 3:
                 searchTerm();
+                pressEnterToContinue();
                 break;
             case 4:
                 fullTextSearch();
+                pressEnterToContinue();
                 break;
             case 5:
                 viewAll();
+                pressEnterToContinue();
                 break;
             case 6:
                 addSecret();
+                pressEnterToContinue();
                 break;
             case 7:
                 searchSecrets();
+                pressEnterToContinue();
                 break;
             case 8:
-                printf("Goodbye!\n");
+                printf("\nGoodbye!\n");
                 break;
             default:
                 printf("Invalid choice. Please enter a number between 1 and 8.\n");
+                pressEnterToContinue();
         }
     } while (choice != 8);
 
