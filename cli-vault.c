@@ -1,3 +1,7 @@
+/* Last updated on November 06, 2025 01:53 AM IST
+Logical Thinking & Problem Solving (Semester 1, 2025-2026)
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
